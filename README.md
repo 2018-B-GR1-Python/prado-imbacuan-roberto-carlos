@@ -1,9 +1,10 @@
 # Python
+## Usos
 - Aplicaciones Web -> Django FlAK
-- eSCRIOTIO mULTIPLATAFORMA -> PyQt
+- Escritorio Multiplataforma -> PyQt
 - VideoJuegs
-- Scrips / Auto
+- Scrips / Automatización
 - Hacking
-- Analsis de datos
+- Analisis de datos
 - AI
 - IOT
