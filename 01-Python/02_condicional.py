@@ -68,4 +68,4 @@ if array:
 else:
     print "No"
 
-# False, None, 0, dicc, arreg: Falsy
+# False, None, 0, dicc, arreg: Falsy.
