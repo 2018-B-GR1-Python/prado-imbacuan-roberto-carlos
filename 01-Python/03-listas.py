@@ -29,12 +29,12 @@ print arregloNUmeros
 
 arregloNUmeros.pop(-3)
 
-print arregloNUmeros
+print (arregloNUmeros)
 
-arregloNUmeros.insert(1,1.1)
+arregloNUmeros.inse
+print (arregloNUmeros(1,1.1))
 
-print arregloNUmeros
 
 del arregloNUmeros[1:4]
 
-print arregloNUmeros
+print(arregloNUmeros)
