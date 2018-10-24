@@ -125,3 +125,10 @@ def agregar_a_archivo(path, *lineas_a_escribir):
 
 leer_Archivos('./08_ejemplo.txt')
 agregar_a_archivo('./08_ejemplo.txt', "Hola esta es una nueva linea")
+
+# Funciones lambda
+elevar_al_cuadrado = lambda n: n * n
+sumar_dos_numeros_v2 = lambda x,y: x + y
+
+print(elevar_al_cuadrado(2))
+print(sumar_dos_numeros(3,4))
