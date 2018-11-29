@@ -1,0 +1,5 @@
+2;Gato;Quito;2;Cafe;No puede caminar;No rescatado
+3;Perro;Quito;6;Cafe;asdsad;No rescatado
+4;Gato;Quito;7;Blanco;Es blanco con algunas manchas cafes;No rescatado
+5;Gato;Cuenca;10;Blanco y Cafe;Esta lastimado de gravedad;No rescatado
+6;Gato;Quito;3;Cafe;Rescatado;No rescatado
