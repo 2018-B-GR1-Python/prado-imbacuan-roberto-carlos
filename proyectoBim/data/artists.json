@@ -1,0 +1,17 @@
+[{
+  "artist_id": "VF",
+  "artist_name": "Vicente Fernandez",
+  "artist_hotttnesss": 0.85
+},{
+  "artist_id": "JJ",
+  "artist_name": "Julio Jaramillo",
+  "artist_hotttnesss": 0.9
+}, {
+  "artist_id": "MJ",
+  "artist_name": "Michael Jackson",
+  "artist_hotttnesss": 0.95
+}, {
+  "artist_id": "EM",
+  "artist_name": "Eminem",
+  "artist_hotttnesss": 0.92
+}]
