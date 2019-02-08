@@ -10,7 +10,7 @@ import pandas as pd
 class DetalleAccountItem(scrapy.Spider):
     # Create your connection.
     conexion = sqlite3.connect('C:/Users/rprado/python-proyecto-final/socialblade.db')
-    #df_read = pd.read_sql_query("SELECT * FROM accounts where origin = 'Twitter'", conexion)
+    # df_read = pd.read_sql_query("SELECT * FROM accounts where origin = 'Instagram'", conexion)
     df_read = pd.read_sql_query("SELECT * FROM accounts", conexion)
     uris = df_read['uri'].values
     name = 'p5'
@@ -62,4 +62,14 @@ class DetalleAccountItem(scrapy.Spider):
                 producto_loader.add_xpath('views_monthly',
                                           '//div[contains(text(),"Last 30 Days")]/following-sibling::div[3]/span/text()')
 
+            if (origin == 'Instagram'):
+                producto_loader.add_value('username', username)
+                producto_loader.add_xpath('subscribers_daily',
+                                          '//div[contains(text(),"Daily Averages")]/following-sibling::div[1]/span/text()')
+                producto_loader.add_xpath('subscribers_monthly',
+                                          '//div[contains(text(),"Monthly Averages")]/following-sibling::div[1]/span/text()')
+                producto_loader.add_xpath('views_daily',
+                                          '//div[contains(text(),"Daily Averages")]/following-sibling::div[3]/span/text()')
+                producto_loader.add_xpath('views_monthly',
+                                          '//div[contains(text(),"Monthly Averages")]/following-sibling::div[3]/span/text()')
             yield producto_loader.load_item()

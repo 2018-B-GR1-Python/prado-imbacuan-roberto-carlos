@@ -5,6 +5,7 @@ from scrapy.loader.processors import TakeFirst
 from proyectoFinal.items import YouTubeItem
 from proyectoFinal.items import TwitchItem
 from proyectoFinal.items import TwitterItem
+from proyectoFinal.items import InstagramItem
 
 class DetalleYouTubeItem(scrapy.Spider):
     name = 'p2'
@@ -104,4 +105,24 @@ class DetalleTwitterItem(scrapy.Spider):
                 producto_loader.add_xpath('follow', 'text()')
                 producto_loader_final['follow'] = producto_loader.load_item()['follow']
                 yield producto_loader_final
+
+class DetalleInstagramItem(scrapy.Spider):
+    name = 'p6'
+    start_urls = [
+        'file:///C:/Users/rprado/AppData/Local/Temp/tmpgzkcrorz.html'
+    ]
+    def parse(self, response):
+        resultados_busqueda = response.xpath('/html/body/div[9]/div[2]/div[position()>4]')
+        for producto in resultados_busqueda:
+            producto_loader = ItemLoader(item=InstagramItem(), selector=producto)
+            producto_loader.default_output_processor = TakeFirst()
+
+            rank = producto_loader.add_xpath('rank', 'div[1]/text()')
+            grade = producto_loader.add_xpath('grade', 'div[2]/span/text()')
+            username = producto_loader.add_xpath('username', 'div[3]/a/text()')
+            uri = producto_loader.add_xpath('uri', 'div[3]/a/@href')
+            uploads = producto_loader.add_xpath('uploads', 'div[4]/span/text()')
+            subs = producto_loader.add_xpath('subs', 'div[5]/span/text()')
+            views = producto_loader.add_xpath('follow', 'div[6]/span/text()')
+            yield producto_loader.load_item()
 

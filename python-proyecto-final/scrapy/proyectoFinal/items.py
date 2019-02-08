@@ -109,6 +109,17 @@ class TwitterItem(scrapy.Item):
     follow = scrapy.Field(input_processor=MapCompose(count_to_int))
     pass
 
+class InstagramItem(scrapy.Item):
+    # define the fields for your item here like:
+    rank = scrapy.Field(input_processor=MapCompose(rank_to_int))
+    grade = scrapy.Field()
+    username = scrapy.Field()
+    uri = scrapy.Field(input_processor=MapCompose(socialblade_link))
+    uploads = scrapy.Field(input_processor=MapCompose(count_to_int))
+    subs = scrapy.Field(input_processor=MapCompose(count_to_int))
+    follow = scrapy.Field(input_processor=MapCompose(count_to_int))
+    pass
+
 class AccountItem(scrapy.Item):
     # define the fields for your item here like:
     username = scrapy.Field()
